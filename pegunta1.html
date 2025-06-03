@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pergunta 1 - Quiz Autismo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pergunta 1</h1>
+    <p>O que é o autismo?</p>
+
+    <button class="opcao" onclick="verificarResposta('a')">Um transtorno</button>
+    <button class="opcao" onclick="verificarResposta('b')">Uma deficiência</button>
+    <button class="opcao" onclick="verificarResposta('c')">Uma doença</button>
+
+    <p id="resultado"></p>
+    <button id="proxima" style="display:none;" onclick="irParaProxima()">Próxima Pergunta</button>
+  </div>
+
+  <script>
+    function verificarResposta(valor) {
+      const resultado = document.getElementById('resultado');
+      const botaoProxima = document.getElementById('proxima');
+
+      if (valor === 'a') {
+        resultado.textContent = 'Muito bem!!!';
+        resultado.style.color = 'green';
+      } else {
+        resultado.textContent = 'Resposta incorreta!';
+        resultado.style.color = 'red';
+      }
+
+      botaoProxima.style.display = 'block';
+    }
+
+    function irParaProxima() {
+      window.location.href = 'pergunta2.html';
+    }
+  </script>
+</body>
+</html>
+

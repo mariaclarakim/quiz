@@ -1,0 +1,66 @@
+*{
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+body{background-image: url('quiz.png');
+    background-position: center;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+
+}/*assim colocamos a imagem no codigo*/
+.container{ 
+    background: #fff;
+    border: 2px solid #777;
+    text-align: center;
+    padding: 20px;
+    width: 600px;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 580px;
+
+}
+
+
+h1{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.5em;
+    text-align: justify;
+    line-height: 0.9em;
+
+    
+    
+}
+
+button {
+    background-color: #f5f1a0;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2.5px solid #ccc;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 50px;
+}
+
+button:hover {
+    background-color: #f5f1a0;
+}
+
+   
