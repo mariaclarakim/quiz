@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz com Botões e Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<form id="quiz-form" onsubmit="return verificarResposta(event)">
+    <h2>Autismo tem relação com outros transtornos?</h2>
+    <label class="option-label">
+        <input type="radio" name="resposta" value="false">
+        Autismo e dislexia são exatamente a mesma coisa.
+    </label>
+    <label class="option-label">
+        <input type="radio" name="resposta" value="true">
+        O diagnóstico diferencial entre autismo e outros transtornos pode ser complexo.
+    </label>
+    <label class="option-label">
+        <input type="radio" name="resposta" value="false">
+        É fácil diferenciar o autismo do TDAH, pois não há sintomas em comum.
+    </label>
+    <button type="submit" id="submit-btn">Verificar</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    function verificarResposta(event) {
+        event.preventDefault();
+        const form = document.getElementById("quiz-form");
+        const resposta = form.resposta.value;
+        const resultado = document.getElementById("resultado");
+
+        if (!resposta) {
+            resultado.innerText = "Por favor, selecione uma opção.";
+            return false;
+        }
+
+        if (resposta == "true") {
+            resultado.innerText = "Resposta correta!";
+            resultado.style.color = "green";
+        } else {
+            resultado.innerText = "Resposta incorreta.";
+            resultado.style.color = "red";
+        }
+
+        // Impede novo envio
+        const radios = form.querySelectorAll('input[type="radio"]');
+        for (const radio of radios) {
+            radio.disabled = true;
+        }
+        form.querySelector('#submit-btn').disabled = true;
+
+        return false;
+    }
+</script>
+
+</body>
+</html>
